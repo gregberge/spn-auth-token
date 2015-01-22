@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "Encrypting and decrypting authentication token of Safari Push Notifications.",
   "main": "index.js",
+  "keywords": [
+    "safari",
+    "push",
+    "notification"
+  ],
   "scripts": {
     "test": "mocha"
   },

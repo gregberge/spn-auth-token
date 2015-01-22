@@ -29,11 +29,11 @@ spnAuthToken.decrypt('TFzEUPY47RFOdtfeXWiwtw==', 'salt')
 
 ### spnAuthToken.crypt(plain, key)
 
-Crypt an authentication token.
+Generate an authentication token from a plain string.
 
-### spnAuthToken.decrypt(crypted, key)
+### spnAuthToken.decrypt(token, key)
 
-Uncrypt an authentication token.
+Decrypt an authentication token.
 
 
 ## License
