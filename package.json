@@ -1,5 +1,5 @@
 {
-  "name": "sfp-auth-token",
+  "name": "spn-auth-token",
   "version": "1.0.0",
   "description": "Encrypting and decrypting authentication token of Safari Push Notifications.",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hipush/sfp-auth-token.git"
+    "url": "https://github.com/hipush/spn-auth-token.git"
   },
   "author": "Bergé Greg <berge.greg@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hipush/sfp-auth-token/issues"
+    "url": "https://github.com/hipush/spn-auth-token/issues"
   },
-  "homepage": "https://github.com/hipush/sfp-auth-token",
+  "homepage": "https://github.com/hipush/spn-auth-token",
   "devDependencies": {
     "chai": "^1.10.0",
     "mocha": "^2.1.0",

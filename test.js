@@ -1,11 +1,11 @@
 var expect = require('chai').expect;
-var sfpAuthToken = require('./index');
+var spnAuthToken = require('./index');
 var randomstring = require('randomstring');
 
-describe('Sfp auth token', function () {
+describe('Spn auth token', function () {
   it('should crypt and decrypt a plain text', function () {
-    var crypted = sfpAuthToken.crypt('my text', 'my key');
-    var decrypted = sfpAuthToken.decrypt(crypted, 'my key');
+    var crypted = spnAuthToken.crypt('my text', 'my key');
+    var decrypted = spnAuthToken.decrypt(crypted, 'my key');
     expect(decrypted).to.equal('my text');
   });
 
@@ -15,7 +15,7 @@ describe('Sfp auth token', function () {
     }
 
     function cryptRandom() {
-      return sfpAuthToken.crypt(
+      return spnAuthToken.crypt(
         randomstring.generate(randomNum(10)),
         randomstring.generate(randomNum(10))
       );
