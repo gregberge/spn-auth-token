@@ -1,6 +1,6 @@
 {
   "name": "sfp-auth-token",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Encrypting and decrypting authentication token of Safari Push Notifications.",
   "main": "index.js",
   "scripts": {
