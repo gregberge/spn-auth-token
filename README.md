@@ -3,7 +3,7 @@
 [![Dependency Status](https://david-dm.org/hipush/spn-auth-token.svg?theme=shields.io)](https://david-dm.org/hipush/spn-auth-token)
 [![devDependency Status](https://david-dm.org/hipush/spn-auth-token/dev-status.svg?theme=shields.io)](https://david-dm.org/hipush/spn-auth-token#info=devDependencies)
 
-Encrypting and decrypting authentication token of Safari Push Notifications.
+Encoding and decoding authentication token of Safari Push Notifications.
 
 ## Install
 
@@ -16,25 +16,24 @@ npm install spn-auth-token
 ```js
 var spnAuthToken = require('spn-auth-token');
 
-spnAuthToken.crypt('my-id', 'salt')
+spnAuthToken.crypt({id: 'my-id'}, 'salt')
 .then(function (token) {
-  console.log(token); // TFzEUPY47RFOdtfeXWiwtw==
+  console.log(token); // eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmb28iOiJiYXIifQ.e9wZgUdux3Bp-QVGjhEBpuS65hU4zcr1uzCMJyPwsg0
 });
 
-spnAuthToken.decrypt('TFzEUPY47RFOdtfeXWiwtw==', 'salt')
-.then(function (clear) {
-  console.log(clear); // 'my-id'
+spnAuthToken.decrypt('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmb28iOiJiYXIifQ.e9wZgUdux3Bp-QVGjhEBpuS65hU4zcr1uzCMJyPwsg0', 'salt')
+.then(function (payload) {
+  console.log(payload); // {id: 'my-id'}
 });
 ```
 
-### spnAuthToken.crypt(plain, key)
+### spnAuthToken.encode(payload, secret)
 
-Generate an authentication token from a plain string.
+Generate an authentication token from a payload.
 
-### spnAuthToken.decrypt(token, key)
+### spnAuthToken.decode(token, secret)
 
-Decrypt an authentication token.
-
+Decode an authentication token.
 
 ## License
 

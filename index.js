@@ -1,30 +1,27 @@
-var crypto = require('crypto');
+var jwt = require('jwt-simple');
 
-exports.crypt = crypt;
-exports.decrypt = decrypt;
+exports.encode = encode;
+exports.decode = decode;
 
 /**
- * Create auth token from a plain string and a key.
+ * Create auth token from a payload and a secret.
  *
- * @param {string} plain Plain text
- * @param {string} key Encryption key
+ * @param {*} payload Payload
+ * @param {string} secret Secret
  */
 
-function crypt(plain, key) {
-  var cipher = crypto.createCipher('aes-256-cbc', key);
-  cipher.update(plain, 'utf8', 'base64');
-  return cipher.final('base64');
+function encode(payload, secret) {
+  return jwt.encode(payload, secret);
 }
 
 /**
  * Decrypt the token using the key;
  *
  * @param {string} token Token
- * @param {string} key Encryption key
+ * @param {string} secret Secret
+ * @returns {*} payload
  */
 
-function decrypt(token, key) {
-  var decipher = crypto.createDecipher('aes-256-cbc', key);
-  decipher.update(token, 'base64', 'utf8');
-  return decipher.final('utf8');
+function decode(token, secret) {
+  return jwt.decode(token, secret);
 }
