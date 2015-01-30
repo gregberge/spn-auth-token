@@ -1,7 +1,7 @@
 {
   "name": "spn-auth-token",
   "version": "1.0.0",
-  "description": "Encrypting and decrypting authentication token of Safari Push Notifications.",
+  "description": "Encoding and decoding authentication token of Safari Push Notifications.",
   "main": "index.js",
   "keywords": [
     "safari",
