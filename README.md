@@ -16,15 +16,9 @@ npm install spn-auth-token
 ```js
 var spnAuthToken = require('spn-auth-token');
 
-spnAuthToken.crypt({id: 'my-id'}, 'salt')
-.then(function (token) {
-  console.log(token); // eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmb28iOiJiYXIifQ.e9wZgUdux3Bp-QVGjhEBpuS65hU4zcr1uzCMJyPwsg0
-});
+var token = spnAuthToken.encode({id: 'my-id'}, 'salt'); // eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmb28iOiJiYXIifQ.e9wZgUdux3Bp-QVGjhEBpuS65hU4zcr1uzCMJyPwsg0
 
-spnAuthToken.decrypt('eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmb28iOiJiYXIifQ.e9wZgUdux3Bp-QVGjhEBpuS65hU4zcr1uzCMJyPwsg0', 'salt')
-.then(function (payload) {
-  console.log(payload); // {id: 'my-id'}
-});
+var payload = spnAuthToken.decode(token, 'salt'); // {id: 'my-id'}
 ```
 
 ### spnAuthToken.encode(payload, secret)
